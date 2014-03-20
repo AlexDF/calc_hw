@@ -7,4 +7,37 @@ a {
 }
 #calc_wrapper {
   background-color: #ccc;
+  width: 400px;
+  height: 475px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+#readout {
+  margin: 0 auto;
+  background-color: #fff;
+  width: 350px;
+  height: 50px;
+}
+#buttons_wrapper {
+  width: 350px;
+  height: 358px;
+  margin: 30px auto 0px;
+  border: 1px solid #000;
+}
+#row1,
+#row2,
+#row3,
+#row4,
+#row5 {
+  height: 66px;
+  width: 350px;
+  background-color: #008000;
+  margin-bottom: 7px;
+}
+.button {
+  height: 66px;
+  width: 80.5px;
+  background-color: #ff0;
+  margin-right: 7px;
+  display: inline-block;
 }
