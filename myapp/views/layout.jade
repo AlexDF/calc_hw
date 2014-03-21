@@ -4,11 +4,12 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='../public/javascripts/getReadout.js')
   body
     block content
     #calc_wrapper
       #readout
-        p(id="digits") #{digits}
+        input#readoutVal(type="text", name="readoutVal", value="#{digits}", readonly)
       #buttons_wrapper
         .row
           a(href="#")
@@ -44,7 +45,7 @@ html
           a(href="#")
             .button
               p 1
-          a(href="show2")
+          a(href="num?digit=2&&readoutVal=#{digits}")
             .button
               p 2
           a(href="show3")
