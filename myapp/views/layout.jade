@@ -4,7 +4,6 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='../public/javascripts/getReadout.js')
   body
     block content
     #calc_wrapper
@@ -42,10 +41,10 @@ html
             .buttonx
               p x
         .row
-          a(href="#")
+          a(href="num?operation=0&&digit=1&&readoutVal=#{digits}")
             .button
               p 1
-          a(href="num?digit=2&&readoutVal=#{digits}")
+          a(href="num?operation=0&&digit=2&&readoutVal=#{digits}")
             .button
               p 2
           a(href="show3")
@@ -61,9 +60,9 @@ html
           a(href="#")
             .button
               p .
-          a(href="#")
+          a(href="num?operation=equals&&readoutVal=#{digits}")
             .button
               p =
-          a(href="#")
+          a(href="num?operation=plus&&readoutVal=#{digits}")
             .buttonx
               p +
