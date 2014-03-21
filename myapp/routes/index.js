@@ -4,13 +4,17 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', digits: '0' });
 };
 
-exports.show2 = function(req, res) {
-  res.render('index', { digits: 2});
-}
+exports.updateReadout = function(req, res) {
+  var readoutVal = req.query.readoutVal;
+  var digit = req.query.digit;
 
-exports.show3 = function(req, res) {
-  res.render('index', { digits: 3});
+  if( readoutVal == "0" ) {
+    res.render('index', { digits: digit});
+  } else {
+    readoutVal = readoutVal + digit;
+    res.render('index', { digits: readoutVal});
+  }
 }
