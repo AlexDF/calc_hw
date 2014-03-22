@@ -8,8 +8,8 @@ var additionFlag = 1;
 var startOver = 0;
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express', digits: '0' });
-};
+  res.render('index', {title: 'Express', digits: '0'});
+}
 
 exports.updateReadout = function(req, res) {
   var readoutVal = req.query.readoutVal;
@@ -18,14 +18,14 @@ exports.updateReadout = function(req, res) {
 
 if( operation !== "0" ) {
   if( additionFlag === 1 && operation !== "equals" ) {
-    total = ( parseInt(total) + parseInt(readoutVal) ).toString();
+    total = ( parseFloat(total) + parseFloat(readoutVal) ).toFixed(5).toString();
     additionFlag = 0;
   }
   
   if( operation === "plus" ) {
     additionFlag = 1;
   } else if( operation === "equals" ) {
-    total = ( parseInt(total) + parseInt(readoutVal) ).toString();
+    total = ( parseFloat(total) + parseFloat(readoutVal) ).toFixed(5).toString();
     res.render('index', {digits: total});
     total = "0"; 
   }
@@ -46,5 +46,10 @@ if( operation !== "0" ) {
   startOver = 0;
 }
 
+
 }
+
+
+
+
 
