@@ -33,8 +33,18 @@ exports.updateReadout = function(req, res) {
         equalsFlag = true;
         res.render('index', {digits: total});
         break;
-    }
-  }
+      default: //operation = "clear"
+        res.render('index', {digits: '0'});
+        startOver = true;
+        total = "0";
+        additionFlag = true;
+        minusFlag = false;
+        multFlag = false;
+        divideFlag = false;
+        equalsFlag = false;
+        break;  
+    }//end switch
+  } //end if operation !== 0
  
   if( operation === 0 ) {
     if( equalsFlag === true ) {
