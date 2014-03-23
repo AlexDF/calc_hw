@@ -10,33 +10,33 @@ html
         input#readoutVal(type="text", name="readoutVal", value="#{digits}", readonly)
       #buttons_wrapper
         .row
-          a(href="#")
+          a(href="num?o=clear")
             .buttonx(id="clear")
               p Clear
         .row
-          a(href="#")
+          a(href="num?d=7&&r=#{digits}")
             .button
               p 7
-          a(href="#")
+          a(href="num?d=8&&r=#{digits}")
             .button
               p 8
-          a(href="#")
+          a(href="num?d=9&&r=#{digits}")
             .button
               p 9
-          a(href="#")
+          a(href="num?o=divide&&r=#{digits}")
             .buttonx
-              p % 
+              p / 
         .row
-          a(href="#")
+          a(href="num?d=4&&r=#{digits}")
             .button
               p 4
-          a(href="#")
+          a(href="num?d=5&&r=#{digits}")
             .button
               p 5
-          a(href="#")
+          a(href="num?d=6&&r=#{digits}")
             .button
               p 6
-          a(href="#")
+          a(href="num?o=mult&&r=#{digits}")
             .buttonx
               p x
         .row
@@ -53,7 +53,7 @@ html
             .buttonx
               p -
         .row
-          a(href="#")
+          a(href="num?d=0&&r=#{digits}")
             .button
               p 0
           a(href="num?d=.&&r=#{digits}")
