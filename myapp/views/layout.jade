@@ -5,7 +5,6 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
     #calc_wrapper
       #readout
         input#readoutVal(type="text", name="readoutVal", value="#{digits}", readonly)
@@ -41,28 +40,28 @@ html
             .buttonx
               p x
         .row
-          a(href="num?operation=0&&digit=1&&readoutVal=#{digits}")
+          a(href="num?d=1&&r=#{digits}")
             .button
               p 1
-          a(href="num?operation=0&&digit=2&&readoutVal=#{digits}")
+          a(href="num?d=2&&r=#{digits}")
             .button
               p 2
-          a(href="#")
+          a(href="num?d=3&&r=#{digits}")
             .button
               p 3
-          a(href="#")
+          a(href="num?o=minus&&r=#{digits}")
             .buttonx
               p -
         .row
           a(href="#")
             .button
               p 0
-          a(href="num?operation=0&&digit=.&&readoutVal=#{digits}")
+          a(href="num?d=.&&r=#{digits}")
             .button
               p .
-          a(href="num?operation=equals&&readoutVal=#{digits}")
+          a(href="num?o=equals&&r=#{digits}")
             .button
               p =
-          a(href="num?operation=plus&&readoutVal=#{digits}")
+          a(href="num?o=plus&&r=#{digits}")
             .buttonx
               p +
