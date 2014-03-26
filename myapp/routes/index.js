@@ -23,11 +23,29 @@ exports.updateReadout = function(req, res) {
     if( additionFlag ) {
       total = ( parseFloat(total) + parseFloat(readoutVal) ).toFixed(5).toString();
       additionFlag = false;
+    } else if( minusFlag ) {
+        total = ( parseFloat(total) - parseFloat(readoutVal) ).toFixed(5).toString();
+        minusFlag = false;
+    } else if( multFlag ) {
+        total = ( parseFloat(total) * parseFloat(readoutVal) ).toFixed(5).toString();
+        multFlag = false;
+    } else if( divideFlag ) {
+        total = ( parseFloat(total) / parseFloat(readoutVal) ).toFixed(5).toString();
+        divideFlag = false;
     }
 
     switch(operation) {
       case "plus":
         additionFlag = true;
+        break;
+      case "minus":
+        minusFlag = true;
+        break;
+      case "mult":
+        multFlag = true;
+        break;
+      case "divide":
+        divideFlag = true;
         break;
       case "equals":
         equalsFlag = true;
